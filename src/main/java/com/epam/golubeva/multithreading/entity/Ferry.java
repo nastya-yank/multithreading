@@ -2,6 +2,7 @@ package com.epam.golubeva.multithreading.entity;
 
 import com.epam.golubeva.multithreading.entity.state.LoadingState;
 import com.epam.golubeva.multithreading.entity.state.StateFerry;
+import com.epam.golubeva.multithreading.exception.ResourceException;
 import com.epam.golubeva.multithreading.service.FerryService;
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -52,7 +53,7 @@ public class Ferry implements Runnable{
         }
     }
 
-    public void changeCoast() {
+    public void changeCoast()  {
         if (currentRiverCoast.getType().equals(CoastType.EAST)) {
             currentRiverCoast = westRiverCoast;
         } else {

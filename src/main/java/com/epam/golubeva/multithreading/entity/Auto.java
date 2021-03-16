@@ -1,5 +1,6 @@
 package com.epam.golubeva.multithreading.entity;
 
+import com.epam.golubeva.multithreading.exception.ResourceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +26,7 @@ public class Auto implements Runnable {
     }
 
     @Override
-    public void run() {
+    public void run()  {
         Ferry.getInstance().getOnBard(this);
         logger.info(String.format(
                 "Car: ["+this.toString()+"] is loaded on ferry "));
